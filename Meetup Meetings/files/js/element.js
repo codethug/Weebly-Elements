@@ -9,14 +9,12 @@
 
             this.meetupTemplate =
               "<ul>{{#meetups}}" +
-              "   <li>{{name}} at {{time}}, {{yes_rsvp_count}} people coming</li>" +
+              "   <li class='meetup'>" +
+              "     <h3><a href='{{link}}'>{{name}}</a></h3>" +
+              "      {{displayTime}} | {{yes_rsvp_count}} RSVP" +
+              "   </li>" +
               "{{/meetups}}</ul>";
 
-            // Todo: Create element.svg and put in root folder of element (from fontawesome?)
-            //    IconFinder, The Noun Project for prebuilt icons
-            //    More Info and tools: https://dev.weebly.com/element-icon-guidelines.html
-            // Todo: Verify it behaves when resized
-            // Todo: only show public meetups (from API URL rather than JS code?)
             var upcomingMeetupsUrl = this.settings.get("meetupAPIUrl");
 
               $.ajax({
@@ -32,9 +30,20 @@
         },
 
         displayMeetups: function(meetups) {
-          var numToDisplay = this.settings.get("numToDisplay");
-          var html = Mustache.to_html(this.meetupTemplate, {meetups: meetups.slice(0,numToDisplay)});
+          var html = Mustache.to_html(this.meetupTemplate, this.convertMeetups(this.limitMeetups(meetups)));
           $('#meetupDisplay').html(html);
+        },
+
+        convertMeetups: function(meetups) {
+            return {meetups: _.map(meetups, function(meetup) {
+                meetup.displayTime = moment(meetup.time).format("MMM d [at] h[:]mma");
+                return meetup;
+            })};
+        },
+
+        limitMeetups: function(meetups) {
+          var numToDisplay = this.settings.get("numToDisplay");
+          return meetups.slice(0,numToDisplay);
         }
 
     });
