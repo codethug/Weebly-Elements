@@ -33,7 +33,8 @@
         },
 
         displayMeetups: function(meetups) {
-          var html = Mustache.to_html(this.meetupTemplate, {meetups: meetups});
+          var numToDisplay = this.settings.get("numToDisplay");
+          var html = Mustache.to_html(this.meetupTemplate, {meetups: meetups.slice(0,numToDisplay)});
           $('#meetupDisplay').html(html);
         }
 
