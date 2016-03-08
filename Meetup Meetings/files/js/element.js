@@ -17,7 +17,6 @@
             //    More Info and tools: https://dev.weebly.com/element-icon-guidelines.html
             // Todo: Verify it behaves when resized
             // Todo: only show public meetups (from API URL rather than JS code?)
-
             var upcomingMeetupsUrl = this.settings.get("meetupAPIUrl");
 
               $.ajax({

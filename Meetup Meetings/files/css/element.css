@@ -1,1 +1,13 @@
+.meetupInstructions {
+  border: 1px solid;
+  margin: 10px 0;
+  padding: 15px 10px 15px 50px;
+  color: #9F6000;
+  background-color: #FEEFB3;
+  list-style-type: decimal;
 
+  li.meetupInstructionItem {
+    list-style-type: decimal;
+  }
+
+}

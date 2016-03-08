@@ -1,11 +1,11 @@
 {
 	"manifest": "1",
 	"client_id": "1338812888",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"elements":[{
 		"name": "Meetup Meetings",
 		"path": "files",
-		"version": "0.0.1",
+		"version": "0.0.2",
     "settings": {
       	"config": {
 	        "autopop": true
@@ -24,7 +24,7 @@
         			"min": 1
             }, {
               "name": "meetupAPIUrl",
-        			"label": "Meetup URL where to find the data",
+        			"label": "Meetup.com API URL for events data (Signed URL)",
         			"type": "string",
         			"default": ""
             }
