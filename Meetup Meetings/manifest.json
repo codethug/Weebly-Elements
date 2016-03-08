@@ -1,0 +1,36 @@
+{
+	"manifest": "1",
+	"client_id": "1338812888",
+	"version": "0.0.1",
+	"elements":[{
+		"name": "Meetup Meetings",
+		"path": "files",
+		"version": "0.0.1",
+    "settings": {
+      	"config": {
+	        "autopop": true
+    	  },
+        "properties": [{
+        	"name": "settings",
+        	"label": "Settings",
+        	"type": "group",
+
+          "properties": [
+            {
+        			"name": "numToDisplay",
+        			"label": "Number to Show",
+        			"type": "int",
+        			"default": 3,
+        			"min": 1
+            }, {
+              "name": "meetupAPIUrl",
+        			"label": "Meetup URL where to find the data",
+        			"type": "string",
+        			"default": ""
+            }
+          ]
+
+        }]
+    }
+	}]
+}
