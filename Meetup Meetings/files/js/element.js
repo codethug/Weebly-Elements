@@ -5,15 +5,7 @@
         initialize: function() {
             // we normalize the styles on initial load.
             // this.fixStyles();
-            console.log("retrieving meetup data");
             var self = this;
-
-            this.meetupModel = Backbone.Model.extend({
-              defaults: {
-                name: '',
-                otherProp: 0
-              }
-            });
 
             this.meetupTemplate =
               "<ul>{{#meetups}}" +
@@ -41,9 +33,6 @@
         },
 
         displayMeetups: function(meetups) {
-          console.log("Upcoming Meetups", meetups);
-          console.log("el", this.el);
-
           var html = Mustache.to_html(this.meetupTemplate, {meetups: meetups});
           $('#meetupDisplay').html(html);
         }
