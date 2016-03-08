@@ -1,11 +1,11 @@
 {
 	"manifest": "1",
 	"client_id": "1338812888",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"elements":[{
-		"name": "Meetup Meetings",
+		"name": "Meetings",
 		"path": "files",
-		"version": "0.0.2",
+		"version": "0.1.0",
     "settings": {
       	"config": {
 	        "autopop": true
